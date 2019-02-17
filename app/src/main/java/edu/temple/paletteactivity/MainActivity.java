@@ -12,17 +12,19 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.graphics.Color;
+import android.content.Intent;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    int curr = 0;
+    int colortoPass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         final String[] colors = {
-
+                "Select",
                 "WHITE",
                 "BLUE",
                 "LIGHTGRAY",
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 "CYAN"
 
         };
+
 
 
 
@@ -55,11 +58,18 @@ public class MainActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             public void onItemSelected(AdapterView<?> adapterView, View view, int position , long l){
+                if (position == curr){
+                    return;
+                }
+                else {
+                    colortoPass = Color.parseColor(colors[position]);
+                    final Intent intent = new Intent(MainActivity.this, CanvasActivity.class);
 
-                //changes the background of the main layout using parsecolor which takes in a string value and picks a
-                //colors based on it
+                    intent.putExtra("color", colortoPass);
+                    startActivity(intent);
 
-                relative.setBackgroundColor(Color.parseColor(colors[position]));
+
+                }
 
 
             }
