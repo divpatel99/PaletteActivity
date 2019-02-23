@@ -3,8 +3,6 @@ package edu.temple.paletteactivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,26 +21,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final String[] colors = {
-                "Select",
-                "WHITE",
-                "BLUE",
-                "LIGHTGRAY",
-                "Gray",
-                "DARKGRAY",
-                "GREEN",
-                "RED",
-                "YELLOW",
-                "MAGENTA",
-                "CYAN"
-
-        };
-
-
-
 
 
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
+       final String[] colors = getResources().getStringArray(R.array.colors_list);
 
         //creates a variable, relative, and passes in the id of the background of the main layout
         final RelativeLayout relative = (RelativeLayout) findViewById(R.id.activity_main);

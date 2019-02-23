@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">PaletteActivity</string>
+
+    <string-array name="colors_list">
+        <item>Select</item>
+        <item>WHITE</item>
+        <item>BLUE</item>
+        <item>LIGHTGRAY</item>
+        <item>Gray</item>
+        <item>DARKGRAY</item>
+        <item>GREEN</item>
+        <item>RED</item>
+        <item>YELLOW</item>
+        <item>MAGENTA</item>
+        <item>CYAN</item>
+
+
+    </string-array>
 </resources>

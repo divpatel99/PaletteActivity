@@ -2,12 +2,7 @@ package edu.temple.paletteactivity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.RelativeLayout;
-import android.widget.Spinner;
-import android.widget.Toast;
-import android.graphics.Color;
 import android.content.Intent;
 
 public class CanvasActivity extends AppCompatActivity {
