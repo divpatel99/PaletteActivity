@@ -1,16 +1,17 @@
 package edu.temple.paletteactivity;
 
+import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
-import android.widget.Toast;
+
 import android.graphics.Color;
-import android.content.Intent;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -25,11 +26,12 @@ public class MainActivity extends AppCompatActivity {
 
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
         final String[] colors = getResources().getStringArray(R.array.colorsList);
-        String[] colorList = getResources().getStringArray(R.array.colors_list);
+       String[] colorList = getResources().getStringArray(R.array.colors_list);
+
 
 
         //creates a variable, relative, and passes in the id of the background of the main layout
-      //  final RelativeLayout relative = (RelativeLayout) findViewById(R.id.activity_main);
+         final ConstraintLayout cons = (ConstraintLayout) findViewById(R.id.fragment_second);
 
         ColorAdapter spinnerAdapter = new ColorAdapter(this, colorList);
         spinner.setAdapter(spinnerAdapter);
@@ -37,15 +39,21 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position , long l){
-                if (position == curr){
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                if (position == curr) {
+                   cons.setBackgroundColor(Color.WHITE);
                     return;
-                }
-                else {
+                } else {
+                    cons.setBackgroundColor(Color.parseColor(colors[position]));
+                 //   colortoPass = Color.parseColor(colors[position]);
 
+
+                  //  final Intent intent = new Intent(MainActivity.this, CanvasActivity.class);
+
+                  //  intent.putExtra("color", colortoPass);
+                 //   startActivity(intent);
 
 
                 }
@@ -56,9 +64,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+                cons.setBackgroundColor(Color.WHITE);
 
             }
         });
 
-    }
+
+
+   }
 }
