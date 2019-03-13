@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //creates a variable, relative, and passes in the id of the background of the main layout
-        final RelativeLayout relative = (RelativeLayout) findViewById(R.id.activity_main);
+      //  final RelativeLayout relative = (RelativeLayout) findViewById(R.id.activity_main);
 
         ColorAdapter spinnerAdapter = new ColorAdapter(this, colorList);
         spinner.setAdapter(spinnerAdapter);
@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Toast.makeText(MainActivity.this, "Select a color from drop-down menu", Toast.LENGTH_LONG).show();
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             public void onItemSelected(AdapterView<?> adapterView, View view, int position , long l){
@@ -46,11 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 else {
-                    colortoPass = Color.parseColor(colors[position]);
-                    final Intent intent = new Intent(MainActivity.this, CanvasActivity.class);
 
-                    intent.putExtra("color", colortoPass);
-                    startActivity(intent);
 
 
                 }
@@ -60,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                relative.setBackgroundColor(Color.WHITE);
 
 
             }
