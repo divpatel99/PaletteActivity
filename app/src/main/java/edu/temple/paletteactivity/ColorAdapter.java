@@ -51,6 +51,14 @@ public class ColorAdapter extends BaseAdapter {
 
 
         rows.setText(colors[i]);
+        
+          if( i >= 1){
+            rows.setBackgroundColor(Color.parseColor(colors[i]));
+
+        }
+        else{
+            rows.setBackgroundColor(Color.WHITE);
+        }
 
 
         return rows;
