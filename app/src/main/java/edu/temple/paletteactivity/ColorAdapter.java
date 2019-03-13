@@ -15,6 +15,7 @@ public class ColorAdapter extends BaseAdapter {
 
     public ColorAdapter(Context activity, String[] colors) {
         this.showContent = activity;
+
         this.colors = colors;
 
         // used to get the View object which you define in a layout xml (the root object like RelativeLayout)

@@ -24,12 +24,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
-       final String[] colors = getResources().getStringArray(R.array.colors_list);
+        final String[] colors = getResources().getStringArray(R.array.colorsList);
+        String[] colorList = getResources().getStringArray(R.array.colors_list);
+
 
         //creates a variable, relative, and passes in the id of the background of the main layout
         final RelativeLayout relative = (RelativeLayout) findViewById(R.id.activity_main);
 
-        ColorAdapter spinnerAdapter = new ColorAdapter(this, colors);
+        ColorAdapter spinnerAdapter = new ColorAdapter(this, colorList);
         spinner.setAdapter(spinnerAdapter);
 
 
