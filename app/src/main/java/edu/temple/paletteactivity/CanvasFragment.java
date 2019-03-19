@@ -9,7 +9,7 @@ import android.os.Bundle;
 public class CanvasFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance ){
-        View view = inflater.inflate(R.layout.fragment_two,container,false);
+        View view = inflater.inflate(R.layout.fragment_two_layout,container,false);
         return view;
     }
 }

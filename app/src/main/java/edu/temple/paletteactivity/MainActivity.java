@@ -33,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
         //creates a variable, relative, and passes in the id of the background of the main layout
          final ConstraintLayout cons = (ConstraintLayout) findViewById(R.id.fragment_second);
 
-        ColorAdapter spinnerAdapter = new ColorAdapter(this, colorList);
+        ColorAdapter spinnerAdapter = new ColorAdapter(this, colors,colorList);
         spinner.setAdapter(spinnerAdapter);
 
 
-
+ 
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 

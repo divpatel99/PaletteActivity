@@ -2,7 +2,7 @@
 <resources>
 
     <string-array name="colors_list">
-        <item>Select</item>
+
         <item>WHITE</item>
         <item>BLUE</item>
         <item>LIGHTGRAY</item>
@@ -18,7 +18,7 @@
     </string-array>
 
     <string-array name="colorsList">
-        <item>Select</item>
+
         <item>WHITE</item>
         <item>BLUE</item>
         <item>LIGHTGRAY</item>
