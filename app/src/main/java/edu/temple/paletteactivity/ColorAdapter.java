@@ -1,27 +1,25 @@
 package edu.temple.paletteactivity;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.content.Context;
 import android.view.View;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 public class ColorAdapter extends BaseAdapter {
 
     Context showContent; //passes background info of an app to an component
     String[] colors;
-    String[] colorName;
+    LayoutInflater inflater;
 
-
-    public ColorAdapter(Context activity, String[] colors, String[] colorName) {
+    public ColorAdapter(Context activity, String[] colors) {
         this.showContent = activity;
+
         this.colors = colors;
-        this.colorName = colorName;
 
-
+        // used to get the View object which you define in a layout xml (the root object like RelativeLayout)
+        inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
     }
 
@@ -44,9 +42,16 @@ public class ColorAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         TextView rows = new TextView(showContent);
 
+        if (view != null) {
+            rows = (TextView) view;
+
+        } else {
+            rows = new TextView(showContent);
+        }
+
 
         rows.setText(colors[i]);
-        rows.setBackgroundColor(Color.parseColor(colors[i]));
+
 
         return rows;
     }
